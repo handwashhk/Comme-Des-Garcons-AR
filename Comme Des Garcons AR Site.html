@@ -1,90 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Comme des Garçons AR Experience</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: sans-serif;
-      background: url('assets/Polaroid.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-      text-align: center;
-      padding: 2rem;
-    }
-    .track-list {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      max-width: 500px;
-      margin: auto;
-    }
-    .track {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 1rem;
-      border-radius: 1rem;
-    }
-    .track img {
-      width: 100%;
-      border-radius: 1rem;
-    }
-    .track-title {
-      margin-top: 0.5rem;
-      font-size: 1.2rem;
-    }
-    a {
-      color: white;
-      text-decoration: none;
-    }
-  </style>
-</head>
-<body>
-  <h1>Comme des Garçons AR Experience</h1>
-  <div class="track-list">
-    <div class="track">
-      <a href="track01.html">
-        <img src="assets/01.jpg" alt="𠝹" />
-        <div class="track-title">1. 𠝹 (Edit) feat. xxtilldawn</div>
-      </a>
-    </div>
-    <div class="track">
-      <a href="track02.html">
-        <img src="assets/02.jpg" alt="CDG" />
-        <div class="track-title">2. CDG</div>
-      </a>
-    </div>
-    <div class="track">
-      <a href="track03.html">
-        <img src="assets/03.jpg" alt="Casanova" />
-        <div class="track-title">3. Casanova</div>
-      </a>
-    </div>
-    <div class="track">
-      <a href="track04.html">
-        <img src="assets/04.jpg" alt="WAR" />
-        <div class="track-title">4. WAR</div>
-      </a>
-    </div>
-    <div class="track">
-      <a href="track05.html">
-        <img src="assets/05.jpg" alt="Gothic Princess" />
-        <div class="track-title">5. Gothic Princess</div>
-      </a>
-    </div>
-    <div class="track">
-      <a href="track06.html">
-        <img src="assets/06.jpg" alt="Signal" />
-        <div class="track-title">6. Signal</div>
-      </a>
-    </div>
-    <div class="track">
-      <a href="track07.html">
-        <img src="assets/07.jpg" alt="Perfecto" />
-        <div class="track-title">7. Perfecto</div>
-      </a>
-    </div>
-  </div>
-</body>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Track 01 - 𠝹</title>
+    <script src="https://unpkg.com/aframe@1.4.0/dist/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.1.4/dist/mindar-image-aframe.prod.js"></script>
+    <style>
+      body, html { margin: 0; overflow: hidden; }
+      #back {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 8px 12px;
+        border-radius: 8px;
+        font-family: sans-serif;
+        z-index: 99;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="index.html" id="back">← Back</a>
+    <a-scene mindar-image="imageTargetSrc: targets/01.mind;" embedded>
+      <a-assets>
+        <a-asset-item id="model" src="models/01.glb"></a-asset-item>
+        <audio id="music" src="audio/01.mp3" preload="auto"></audio>
+      </a-assets>
+
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-gltf-model src="#model" scale="0.3 0.3 0.3"></a-gltf-model>
+      </a-entity>
+
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+    </a-scene>
+
+    <script>
+      window.addEventListener('click', () => {
+        document.querySelector('#music').play();
+        document.querySelector('a-scene').components['mindar-image'].start();
+      }, { once: true });
+    </script>
+  </body>
 </html>
