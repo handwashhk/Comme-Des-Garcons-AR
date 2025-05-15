@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Track 01 - 𠝹</title>
+    <script src="https://unpkg.com/aframe@1.4.0/dist/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.1.4/dist/mindar-image-aframe.prod.js"></script>
+    <style>
+      body, html { margin: 0; overflow: hidden; }
+      #back {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 8px 12px;
+        border-radius: 8px;
+        font-family: sans-serif;
+        z-index: 99;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="index.html" id="back">← Back</a>
+    <a-scene mindar-image="imageTargetSrc: targets/01.mind;" embedded>
+      <a-assets>
+        <a-asset-item id="model" src="models/01.glb"></a-asset-item>
+        <audio id="music" src="audio/01.mp3" preload="auto"></audio>
+      </a-assets>
+
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-gltf-model src="#model" scale="0.3 0.3 0.3"></a-gltf-model>
+      </a-entity>
+
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+    </a-scene>
+
+    <script>
+      window.addEventListener('click', () => {
+        document.querySelector('#music').play();
+        document.querySelector('a-scene').components['mindar-image'].start();
+      }, { once: true });
+    </script>
+  </body>
+</html>
