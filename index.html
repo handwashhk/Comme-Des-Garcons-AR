@@ -3,124 +3,86 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Comme des Garçons AR Portal</title>
+  <title>Comme des Garçons AR Experience</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Helvetica Neue', sans-serif;
-      background: url('Polaroid.jpg') no-repeat center center fixed;
+      font-family: sans-serif;
+      background: url('assets/Polaroid.jpg') no-repeat center center fixed;
       background-size: cover;
-      color: #f5f5f5;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+    .track-list {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      backdrop-filter: brightness(0.4);
+      gap: 2rem;
+      max-width: 500px;
+      margin: auto;
     }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      font-weight: 300;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    .track {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 1rem;
+      border-radius: 1rem;
     }
-
-    .menu {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      width: 90%;
-      max-width: 600px;
+    .track img {
+      width: 100%;
+      border-radius: 1rem;
     }
-
-    .item {
-      padding: 1.5rem;
-      background-color: rgba(30, 30, 30, 0.85);
-      border: 1px solid #444;
-      border-radius: 12px;
-      transition: background 0.3s;
-    }
-
-    .item:hover {
-      background-color: rgba(60, 60, 60, 0.85);
-    }
-
-    .item a {
-      color: #f5f5f5;
-      text-decoration: none;
-      font-size: 1.1rem;
-    }
-
-    .title {
-      font-weight: 600;
+    .track-title {
+      margin-top: 0.5rem;
       font-size: 1.2rem;
-      margin-bottom: 0.2rem;
     }
-
-    .lyric {
-      font-style: italic;
-      font-size: 0.95rem;
-      color: #ccc;
-      margin-bottom: 0.5rem;
-    }
-
-    .item span {
-      font-size: 0.85rem;
-      color: #aaa;
+    a {
+      color: white;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-  <h1>Comme des Garçons AR</h1>
-  <div class="menu">
-    <div class="item">
-      <a href="https://go.echo3d.co/3Q4A" target="_blank">
-        <div class="title">𠝹 (Edit) feat @xxtilldawn</div>
-        <div class="lyric">一起等到流膿然後笑</div>
-        <span>View sculpture + song</span>
+  <h1>Comme des Garçons AR Experience</h1>
+  <div class="track-list">
+    <div class="track">
+      <a href="track01.html">
+        <img src="assets/01.jpg" alt="𠝹" />
+        <div class="track-title">1. 𠝹 (Edit) feat. xxtilldawn</div>
       </a>
     </div>
-    <div class="item">
-      <a href="https://go.echo3d.co/dUz4" target="_blank">
-        <div class="title">CDG</div>
-        <div class="lyric">Act like all the boys</div>
-        <span>View sculpture + song</span>
+    <div class="track">
+      <a href="track02.html">
+        <img src="assets/02.jpg" alt="CDG" />
+        <div class="track-title">2. CDG</div>
       </a>
     </div>
-    <div class="item">
-      <a href="https://go.echo3d.co/X1hv" target="_blank">
-        <div class="title">Casanova</div>
-        <div class="lyric">星光夜幕下 共你亂墜天花</div>
-        <span>View sculpture + song</span>
+    <div class="track">
+      <a href="track03.html">
+        <img src="assets/03.jpg" alt="Casanova" />
+        <div class="track-title">3. Casanova</div>
       </a>
     </div>
-    <div class="item">
-      <a href="https://go.echo3d.co/5i8U" target="_blank">
-        <div class="title">WAR</div>
-        <div class="lyric">翻開一頁新篇章 打破陳舊思想</div>
-        <span>View sculpture + song</span>
+    <div class="track">
+      <a href="track04.html">
+        <img src="assets/04.jpg" alt="WAR" />
+        <div class="track-title">4. WAR</div>
       </a>
     </div>
-    <div class="item">
-      <a href="https://go.echo3d.co/cFrm" target="_blank">
-        <div class="title">Gothic Princess</div>
-        <div class="lyric">像是被你給俘虜 垂手可得的獵物</div>
-        <span>View sculpture + song</span>
+    <div class="track">
+      <a href="track05.html">
+        <img src="assets/05.jpg" alt="Gothic Princess" />
+        <div class="track-title">5. Gothic Princess</div>
       </a>
     </div>
-    <div class="item">
-      <a href="https://go.echo3d.co/8Upt" target="_blank">
-        <div class="title">Signal</div>
-        <div class="lyric">Turn your signal off we start that healing</div>
-        <span>View sculpture + song</span>
+    <div class="track">
+      <a href="track06.html">
+        <img src="assets/06.jpg" alt="Signal" />
+        <div class="track-title">6. Signal</div>
       </a>
     </div>
-    <div class="item">
-      <a href="https://go.echo3d.co/TAab" target="_blank">
-        <div class="title">Perfecto</div>
-        <div class="lyric">不由自主的點頭 順理好我的奏摺</div>
-        <span>View sculpture + song</span>
+    <div class="track">
+      <a href="track07.html">
+        <img src="assets/07.jpg" alt="Perfecto" />
+        <div class="track-title">7. Perfecto</div>
       </a>
     </div>
   </div>
